@@ -1,0 +1,100 @@
+<!-- table leaf_spy search -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <table width=100% border=0>
+                <tr>
+                    <td valign=top>
+                        <!-- results -->
+                        [#if RESULT#]
+                        <!-- search results (list) -->
+                        <form action="?" method="post" name="frmList_leaf_spy" style="padding:0px" class="form">
+                            <table  align=center class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th><#LANG_ID#></th>
+                                    <th><#LANG_LEAFSPY_SENSOR_BATTERY#></th>
+                                    <th><#LANG_LEAFSPY_COORDINATES#></th>
+                                    <th><#LANG_LEAFSPY_TRIP_NO#></th>
+                                    <th><#LANG_LEAFSPY_ODOMETER#></th>
+                                    <th><#LANG_LEAFSPY_CAR_BATTERY#></th>
+                                    <th><#LANG_LEAFSPY_CAR_BATTERY_TEMP#></th>
+                                    <th><#LANG_LEAFSPY_ENGINE_RPM#></th>
+                                    <th><#LANG_LEAFSPY_BATTERY_HEALTH#></th>
+                                    <th><#LANG_SPEED#></th>
+                                    <th><#LANG_LEAFSPY_BATTERY_VOLTAGE#></th>
+                                    <th><#LANG_LEAFSPY_BATTERY_CURRENT#></th>
+                                    <th><#LANG_LEAFSPY_BATTERY_CAPACITY#></th>
+                                    <th><#LANG_LEAFSPY_BATTERY_GIDS#></th>
+                                    <th><#LANG_LEAFSPY_BATTERY_HX#></th>
+                                    <th><#LANG_DATE#></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                [#begin RESULT#]
+                                <tr>
+                                    <td>[#ID#]</td>
+                                    <td>[#DEVBAT#]%</td>
+                                    <td>[#LAT#], [#LONG#]<br />[#ELV#] <#LANG_LEAFSPY_METER#></td>
+                                    <td>[#TRIP#]</td>
+                                    <td>[#ODO#] <#LANG_LEAFSPY_KILOMETER#></td>
+                                    <td>[#SOC#]%</td>
+                                    <td>[#BATTEMP#]&#176;[#TUNITS#]</td>
+                                    <td>[#RPM#]</td>
+                                    <td>[#SOH#]%</td>
+                                    <td>[#SPEED#] <#LANG_LEAFSPY_KILOMETERPERHOUR#></td>
+                                    <td>[#BATVOLTS#] <#LANG_LEAFSPY_VOLT#></td>
+                                    <td>[#BATAMPS#] <#LANG_LEAFSPY_AMPER#></td>
+                                    <td>[#AHR#] <#LANG_LEAFSPY_AMPERHOUR#></td>
+                                    <td>[#GIDS#]</td>
+                                    <td>[#HX#]</td>
+                                    <td>[#CREATEDON#]</td>
+                                    <td width="1%" nowrap>
+                                        <div>
+                                            [#if "<#ACTION#>"=="admin"#]
+                                            <a href="?data_source=data&view_mode=delete_leaf_spy&id=[#ID#]" onClick="return confirm('<#LANG_ARE_YOU_SURE#>')" class="btn btn-default" title="<#LANG_DELETE#>"><i class="glyphicon glyphicon-remove"></i></a>
+                                            [#endif ACTION#]
+                                        </div>
+                                    </td>
+                                </tr>
+                                [#end RESULT#]
+                                </tbody>
+                            </table>
+                            <input type="hidden" name="data_source" value="<#DATA_SOURCE#>">
+                            <input type="hidden" name="view_mode" value="search_leaf_spy">
+                        </form>
+                        <!-- / search results (list) -->
+                        [#else RESULT#]
+                        <p><font color="red"><#LANG_NO_RECORDS_FOUND#></font></p>
+                        [#endif RESULT#]
+                        <!-- / results -->
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <!-- paging -->
+            [#if PAGES#]
+                <ul class="pagination">
+                    <!--<td align=right><b>Pages:</b>&nbsp;</td>-->
+                    [#begin PREVPAGE#]
+                    <li class="page-item">
+                        <a class="page-link" href="?view_mode=<#VIEW_MODE#>&mode=<#MODE#>&save_qry=1&page=[#NUM#]">&lt;&lt;&lt;</a>
+                    </li>
+                    [#end PREVPAGE#]
+                    [#begin PAGES#]
+                    <li class="page-item [#if SELECTED#]active[#endif#]">
+                        <a href="?view_mode=<#VIEW_MODE#>&mode=<#MODE#>&save_qry=1&page=[#NUM#]">[#NUM#]</a>
+                    </li>
+                    [#end PAGES#]
+                    [#begin NEXTPAGE#]
+                    <li class="page-item"><a class="page-link" href="?view_mode=<#VIEW_MODE#>&mode=<#MODE#>&save_qry=1&page=[#NUM#]">&gt;&gt;&gt;</a></li>
+                    [#end NEXTPAGE#]
+                </ul>
+            [#endif PAGES#]
+            <!-- / paging -->
+        </div>
+    </div>
+</div>

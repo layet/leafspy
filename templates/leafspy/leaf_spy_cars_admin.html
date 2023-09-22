@@ -1,0 +1,453 @@
+<style>
+    :root {
+        --text-black: #333;
+        --text-black-shadow: rgba(0, 0, 0, 0.25);
+        --text-grey: rgba(51, 51, 51, 0.40);
+        --text-white: #FFF;
+        --text-green: #01F2CF;
+        --text-white-shadow: rgba(255, 255, 255, 0.25);
+        --button-blue: #0079BF;
+        --button-red: #CE4040;
+    }
+
+    .leaf-spy-container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .car-container {
+        width: 466px;
+        /*height: 769px;*/
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        border-radius: 10px;
+        border: 1px solid #D1D1D1;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px var(--text-black-shadow);;
+        backdrop-filter: blur(2px);
+        margin-top: 10px;
+        background-image: url("data:image/svg+xml,%3Csvg%20width%3D%22500%22%20height%3D%22386%22%20viewBox%3D%220%200%20500%20386%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22331%22%20cy%3D%22-136%22%20r%3D%22223.5%22%20stroke%3D%22url(%23paint0_linear_18_782)%22%20stroke-opacity%3D%220.87%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22334%22%20cy%3D%22-84%22%20r%3D%22275.5%22%20stroke%3D%22url(%23paint1_linear_18_782)%22%20stroke-opacity%3D%220.77%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22299%22%20cy%3D%2233%22%20r%3D%22352.5%22%20stroke%3D%22url(%23paint2_linear_18_782)%22%20stroke-opacity%3D%220.57%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22paint0_linear_18_782%22%20x1%3D%22115.884%22%20y1%3D%22-76.9858%22%20x2%3D%22436.337%22%20y2%3D%2288%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20stop-color%3D%22%2300FFDA%22%20stop-opacity%3D%220.04%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220.357292%22%20stop-color%3D%22%2300FFDA%22%20stop-opacity%3D%220.657%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2300FFDA%22%20stop-opacity%3D%220.04%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22paint1_linear_18_782%22%20x1%3D%2268.9462%22%20y1%3D%22-11.2861%22%20x2%3D%22463.79%22%20y2%3D%22192%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20stop-color%3D%22%2300FFDA%22%20stop-opacity%3D%220%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220.315625%22%20stop-color%3D%22%2300FFDA%22%20stop-opacity%3D%220.861125%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220.560417%22%20stop-color%3D%22%2300FFDA%22%20stop-opacity%3D%220.9336%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2300FFDA%22%20stop-opacity%3D%220.56%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22paint2_linear_18_782%22%20x1%3D%22-40%22%20y1%3D%22126%22%20x2%3D%22465%22%20y2%3D%22386%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20stop-color%3D%22%2300FFDA%22%20stop-opacity%3D%220%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220.565625%22%20stop-color%3D%22%2300FFDA%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2300FFDA%22%20stop-opacity%3D%220%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fsvg%3E");
+        background-repeat: no-repeat;
+    }
+
+    .car-header {
+        width: 100%;/*195px;*/
+        height: 40px;
+        flex-shrink: 0;
+        margin-top: 36px;
+        margin-left: 43px;
+    }
+
+    .car-estimated-kilometerage {
+        width: 100%;/*255px;*/
+        height: 256px;
+        flex-shrink: 0;
+        margin: 24px auto 0px auto;
+        text-align: center;
+    }
+
+    .flip-card {
+        width: 185px;
+        height: 307px;
+        margin-top: 24px;
+        flex-shrink: 0;
+        perspective: 1000px;
+    }
+
+    .flip-card-inner {
+        height: 100%;
+        position: relative;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+
+    .flip-card-front, .flip-card-back {
+        width: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+    }
+
+    .flip-card-back {
+        transform: rotateY(180deg);
+    }
+
+    .car-battery {
+        border-radius: 20px;
+        background: #FFF;
+        box-shadow: 0px 4px 36px 0px var(--text-black-shadow);
+        width: 185px;
+        height: 307px;
+    }
+
+    .car-tiles {
+        width: 185px;
+        height: 307px;
+        margin-top: 24px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .car-info {
+        width: 185px;
+        height: 143px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: #FFF;
+        box-shadow: 0px 4px 36px 0px var(--text-black-shadow);
+    }
+
+    .car-tile-header {
+        color: var(--text-black);
+        text-shadow: 0px 0px 10px var(--text-black-shadow);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        width: 100%;
+        padding-top: 20px;
+        margin-left: 20px;
+    }
+
+    .car-tile-battery {
+        margin-left: 35px;
+        margin-top: 12px;
+    }
+
+    .car-tile-block {
+        width: 100%;
+        padding-left: 15px;
+        margin-top: 12px;
+    }
+
+    .car-tile-block div:nth-child(1)
+    {
+        display: inline-block;
+        width: 53%;
+        text-align: left;
+    }
+
+    .car-tile-block div:nth-child(2)
+    {
+        display: inline-block;
+        width: 45%;
+        text-align: right;
+        padding-right: 15px;
+    }
+
+    .car-tile-block2 {
+        width: 100%;
+        padding-left: 15px;
+        margin-top: 8px;
+    }
+
+    .grey-text {
+        color: var(--text-grey);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .header-text {
+        color: var(--text-black);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+
+    .tile-text {
+        color: var(--text-black);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .tile-text-green {
+        color: var(--text-green);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .tile-big-text {
+        color: var(--text-black);
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .battery-text {
+        fill: var(--text-black);
+        font-size: 47.572px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .car-button {
+        width: 185px;
+        height: 53px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        box-shadow: 0px 4px 36px 0px var(--text-black-shadow);
+        margin-top: 24px;
+        margin-bottom: 24px;
+        color: #FFF;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-align: center;
+    }
+
+    a.car-button {
+        text-decoration: none;
+    }
+
+    .car-button:before {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        content: "";
+    }
+
+    .car-button-blue {
+        background: var(--button-blue);
+    }
+
+    .car-button-red {
+        background: var(--button-red);
+    }
+</style>
+
+<div class="leaf-spy-container">
+    [#if RESULT#]
+        [#begin RESULT#]
+         <div class="car-container">
+            <div class="car-header">
+                <span class="grey-text">Nissan Leaf</span>
+                <p class="header-text">[#VIN#]</p>
+            </div>
+            <div class="car-estimated-kilometerage">
+                <svg width="255" height="256" viewBox="0 0 255 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M254.5 128C254.5 198.418 197.638 255.5 127.5 255.5C57.3617 255.5 0.5 198.418 0.5 128C0.5 57.5818 57.3617 0.5 127.5 0.5C197.638 0.5 254.5 57.5818 254.5 128Z" stroke="#03DABB"/>
+                    <g filter="url(#filter0_d_18_834)">
+                        <ellipse cx="127.5" cy="128" rx="98.5" ry="99" fill="url(#paint0_radial_18_834)" shape-rendering="crispEdges"/>
+                        <path d="M127.5 234.5C186.078 234.5 233.5 186.782 233.5 128C233.5 69.2175 186.078 21.5 127.5 21.5C68.9221 21.5 21.5 69.2175 21.5 128C21.5 186.782 68.9221 234.5 127.5 234.5Z" stroke="#01F2CF" stroke-width="15" shape-rendering="crispEdges"/>
+                    </g>
+                    <text text-anchor="middle" x="128" y="148" class="battery-text">[#EST_KILOMETERAGE#]</text>
+                    <path d="M112.2 171.7L112.06 168.62L119.4 161H122.32L116.22 167.48L114.78 169.06L112.2 171.7ZM109.88 175V161H112.48V175H109.88ZM119.64 175L114.28 168.62L116 166.72L122.68 175H119.64ZM137.495 164.2C138.348 164.2 139.102 164.367 139.755 164.7C140.422 165.033 140.942 165.547 141.315 166.24C141.688 166.92 141.875 167.8 141.875 168.88V175H139.375V169.2C139.375 168.253 139.168 167.547 138.755 167.08C138.342 166.613 137.748 166.38 136.975 166.38C136.428 166.38 135.942 166.5 135.515 166.74C135.102 166.98 134.775 167.333 134.535 167.8C134.308 168.267 134.195 168.86 134.195 169.58V175H131.695V169.2C131.695 168.253 131.488 167.547 131.075 167.08C130.662 166.613 130.068 166.38 129.295 166.38C128.748 166.38 128.262 166.5 127.835 166.74C127.422 166.98 127.095 167.333 126.855 167.8C126.628 168.267 126.515 168.86 126.515 169.58V175H124.015V164.32H126.395V167.16L125.975 166.32C126.335 165.627 126.855 165.1 127.535 164.74C128.228 164.38 129.015 164.2 129.895 164.2C130.895 164.2 131.762 164.447 132.495 164.94C133.242 165.433 133.735 166.18 133.975 167.18L132.995 166.84C133.342 166.04 133.915 165.4 134.715 164.92C135.515 164.44 136.442 164.2 137.495 164.2Z" fill="black" fill-opacity="0.5"/>
+                    [#if CHRGMODE=="0"#]
+                    <g filter="url(#filter1_d_18_834)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M116.969 78.6058C116.969 79.0459 116.969 79.4859 116.969 79.926C116.969 80.5616 116.435 81.0994 115.803 81.0994H110.749C110.118 81.0994 109.632 80.5616 109.632 79.926C109.632 76.5034 109.632 73.0808 109.68 69.6582C109.729 65.5512 111.43 64.3777 111.77 63.9866H109.729C109.34 63.9866 109 63.6443 109 63.2532V62.3242C109 61.933 109.486 61.5419 109.875 61.493L113.422 61.004L115.754 56.6036C115.949 56.3102 117.212 54.9412 118.767 54.6967C124.744 53.7678 131.207 53.7678 137.233 54.6967C138.739 54.9412 140.003 56.3102 140.197 56.6036L142.578 61.004L146.125 61.493C146.514 61.5419 147 61.933 147 62.3242V63.2532C147 63.6443 146.66 63.9866 146.271 63.9866H144.182C144.57 64.3777 146.271 65.5512 146.32 69.6582C146.32 73.0808 146.368 76.5034 146.368 79.926C146.368 80.5616 145.834 81.0994 145.251 81.0994H140.148C139.517 81.0994 139.031 80.5616 139.031 79.926C139.031 79.4859 139.031 79.0459 139.031 78.6058C131.645 79.0459 124.307 79.0459 116.969 78.6058ZM118.962 56.7992C118.379 56.9459 117.844 57.1903 117.358 57.9237C116.678 59.2439 115.997 60.6129 115.317 61.933H140.683C140.003 60.6129 139.322 59.2439 138.642 57.9237C138.156 57.1903 137.621 56.9459 137.038 56.7992C131.013 56.0658 124.987 56.0658 118.962 56.7992ZM143.987 70.2939C141.655 70.7339 139.371 71.0273 137.136 71.5162C136.601 71.8096 136.212 72.2985 135.872 72.8852C135.775 73.1297 135.775 73.5209 135.824 73.912C138.01 73.5698 140.197 73.2275 142.335 72.8363C143.064 72.5919 143.598 72.054 143.987 71.3206C144.084 70.8317 144.084 70.4894 143.987 70.2939ZM112.013 70.2939C114.297 70.7339 116.581 71.0273 118.816 71.5162C119.35 71.8096 119.788 72.2985 120.128 72.8852C120.176 73.1297 120.176 73.5209 120.128 73.912C117.941 73.5698 115.803 73.2275 113.616 72.8363C112.887 72.5919 112.353 72.054 111.964 71.3206C111.916 70.8317 111.916 70.4894 112.013 70.2939Z" fill="#333333"/>
+                    </g>
+                    [#else#]
+                    <g filter="url(#filter2_d_18_834)">
+                        <path d="M120.113 71.7508H123.501L119.238 86.8341C119.163 87.0861 119.149 87.3521 119.194 87.6108C119.24 87.8695 119.346 88.1139 119.502 88.3243C119.659 88.5347 119.862 88.7054 120.095 88.8227C120.329 88.94 120.586 89.0007 120.847 89C121.071 89.001 121.292 88.9567 121.497 88.8698C121.703 88.7829 121.89 88.6552 122.045 88.4942L138.093 72.2826C138.348 72.0268 138.523 71.7003 138.593 71.3445C138.664 70.9888 138.628 70.6199 138.49 70.2848C138.352 69.9497 138.118 69.6635 137.818 69.4627C137.518 69.2619 137.165 69.1555 136.805 69.157H133.649L137.513 55.4355C137.658 54.9177 137.682 54.3732 137.584 53.8444C137.485 53.3157 137.266 52.8171 136.945 52.3877C136.623 51.9582 136.207 51.6095 135.729 51.3687C135.251 51.128 134.725 51.0018 134.19 51H125.819C125.068 51.0039 124.339 51.2523 123.74 51.7081C123.141 52.164 122.705 52.8028 122.496 53.529L118.078 69.0921C117.991 69.4047 117.976 69.7334 118.036 70.0525C118.096 70.3715 118.228 70.6723 118.423 70.9312C118.618 71.1901 118.869 71.4 119.158 71.5444C119.447 71.6889 119.765 71.764 120.088 71.7638L120.113 71.7508Z" fill="#333333"/>
+                    </g>
+                    [#endif#]
+                    <defs>
+                        <filter id="filter0_d_18_834" x="10" y="14" width="235" height="236" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dy="4"/>
+                            <feGaussianBlur stdDeviation="2"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_18_834"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_18_834" result="shape"/>
+                        </filter>
+                        [#if CHRGMODE!="0"#]
+                        <filter id="filter1_d_18_834" x="93" y="39" width="68" height="57.0994" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dx="-1"/>
+                            <feGaussianBlur stdDeviation="7.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.53 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_18_834"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_18_834" result="shape"/>
+                        </filter>
+                        [#else#]
+                        <filter id="filter2_d_18_834" x="114" y="43" width="34.6285" height="52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dx="3" dy="-1"/>
+                            <feGaussianBlur stdDeviation="3.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.69 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_18_834"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_18_834" result="shape"/>
+                        </filter>
+                        [#endif#]
+                        <radialGradient id="paint0_radial_18_834" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(127.5 128) rotate(90) scale(99 98.5)">
+                            <stop stop-color="white"/>
+                            <stop offset="0.672893" stop-color="#03DAB2" stop-opacity="0.11"/>
+                        </radialGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner" id="flip-[#VIN#]">
+                    <div class="flip-card-front" onclick="$('#flip-[#VIN#]').css('transform', 'rotateY(180deg)');">
+                        <div class="car-battery">
+                            <div class="car-tile-header"><#LANG_LEAFSPY_CAR_BATTERY#></div>
+                            <div class="car-tile-battery">
+                                <svg width="111" height="160" viewBox="0 0 111 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                                    <path d="M0 23C0 10.2975 10.2975 0 23 0H88C100.703 0 111 10.2975 111 23V137C111 149.703 100.703 160 88 160H23C10.2975 160 0 149.703 0 137V23Z" fill="url(#paint0_linear_18_792)" clip-path="url(#cut-off-top-[#VIN#])"/>
+                                    <rect x="0.371653" y="0.371653" width="110.257" height="159.184" rx="21.9275" stroke="black" stroke-opacity="0.82" stroke-width="0.743306"/>
+                                    <!--<path d="M36.654 89.5709C34.3389 89.5709 32.0396 89.2696 29.7562 88.667C27.4727 88.0327 25.5381 87.1447 23.9524 86.003L26.9494 80.1041C28.218 81.0238 29.6927 81.7533 31.3736 82.2924C33.0545 82.8316 34.7512 83.1011 36.4638 83.1011C38.3983 83.1011 39.9206 82.7206 41.0306 81.9594C42.1406 81.1983 42.6956 80.1517 42.6956 78.8197C42.6956 77.5511 42.2041 76.5521 41.2209 75.8227C40.2378 75.0932 38.652 74.7285 36.4638 74.7285H32.9435V69.6384L42.2199 59.1251L43.0762 61.8842H25.6174V55.6999H48.9275V60.6949L39.6986 71.2082L35.7978 68.9724H38.0336C42.1248 68.9724 45.2169 69.8921 47.3101 71.7315C49.4032 73.571 50.4498 75.9337 50.4498 78.8197C50.4498 80.6908 49.9582 82.451 48.9751 84.1001C47.9919 85.7176 46.4855 87.0337 44.4558 88.0486C42.4261 89.0634 39.8255 89.5709 36.654 89.5709ZM53.6274 82.007V76.8217L69.326 55.6999H77.4132L62.0476 76.8217L58.2894 75.7275H84.5014V82.007H53.6274ZM71.5619 89V82.007L71.7998 75.7275V69.4957H79.0782V89H71.5619Z" fill="#333333"/>-->
+                                    <text text-anchor="middle" x="55" y="90" class="battery-text">[#SOC#]</text>
+                                    <path d="M49.6381 112.577L58.1653 100.09H60.2882L51.761 112.577H49.6381ZM50.7263 106.833C50.1198 106.833 49.5846 106.696 49.1208 106.423C48.657 106.137 48.2883 105.739 48.0148 105.227C47.7531 104.704 47.6223 104.092 47.6223 103.39C47.6223 102.688 47.7531 102.082 48.0148 101.57C48.2883 101.059 48.657 100.661 49.1208 100.375C49.5846 100.09 50.1198 99.947 50.7263 99.947C51.3329 99.947 51.8681 100.09 52.3319 100.375C52.7957 100.661 53.1584 101.059 53.4201 101.57C53.6817 102.082 53.8125 102.688 53.8125 103.39C53.8125 104.092 53.6817 104.704 53.4201 105.227C53.1584 105.739 52.7957 106.137 52.3319 106.423C51.8681 106.696 51.3329 106.833 50.7263 106.833ZM50.7263 105.37C51.1188 105.37 51.434 105.21 51.6718 104.889C51.9097 104.556 52.0286 104.056 52.0286 103.39C52.0286 102.724 51.9097 102.23 51.6718 101.909C51.434 101.576 51.1188 101.41 50.7263 101.41C50.3458 101.41 50.0306 101.576 49.7808 101.909C49.543 102.23 49.4241 102.724 49.4241 103.39C49.4241 104.044 49.543 104.538 49.7808 104.871C50.0306 105.204 50.3458 105.37 50.7263 105.37ZM59.2 112.72C58.6054 112.72 58.0702 112.583 57.5945 112.31C57.1307 112.024 56.7679 111.626 56.5063 111.114C56.2446 110.591 56.1138 109.979 56.1138 109.277C56.1138 108.575 56.2446 107.969 56.5063 107.457C56.7679 106.946 57.1307 106.548 57.5945 106.262C58.0702 105.977 58.6054 105.834 59.2 105.834C59.8185 105.834 60.3596 105.977 60.8234 106.262C61.2872 106.548 61.65 106.946 61.9116 107.457C62.1732 107.969 62.3041 108.575 62.3041 109.277C62.3041 109.979 62.1732 110.591 61.9116 111.114C61.65 111.626 61.2872 112.024 60.8234 112.31C60.3596 112.583 59.8185 112.72 59.2 112.72ZM59.2 111.257C59.5925 111.257 59.9076 111.097 60.1455 110.775C60.3834 110.442 60.5023 109.943 60.5023 109.277C60.5023 108.623 60.3834 108.129 60.1455 107.796C59.9076 107.463 59.5925 107.297 59.2 107.297C58.8194 107.297 58.5043 107.463 58.2545 107.796C58.0167 108.117 57.8977 108.611 57.8977 109.277C57.8977 109.943 58.0167 110.442 58.2545 110.775C58.5043 111.097 58.8194 111.257 59.2 111.257Z" fill="#333333"/>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_18_792" x1="41.625" y1="111" x2="62.6778" y2="192.739" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#01F2CF"/>
+                                            <stop offset="0.448057" stop-color="#03DA9A"/>
+                                            <stop offset="1" stop-color="#03B3DA"/>
+                                        </linearGradient>
+                                        <clipPath id="cut-off-top-[#VIN#]">
+                                            <rect x="0" y="[#SOC_Y#]" width="111" height="[#SOC_HEIGHT#]" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="car-tile-block tile-text">
+                                <div><#LANG_LEAFSPY_TEMPERATURE#></div>
+                                <div>[#BATTEMP#]&#176;[#TUNITS#]</div>
+                            </div>
+                            <div class="car-tile-block tile-text">
+                                <div><#LANG_LEAFSPY_VOLTAGE#></div>
+                                <div>[#BATVOLTS#] <#LANG_LEAFSPY_VOLT#></div>
+                            </div>
+                            <div class="car-tile-block tile-text-green"><#LANG_LEAFSPY_SHOW_MORE#></div>
+                        </div>
+                    </div>
+                    <div class="flip-card-back" onclick="$('#flip-[#VIN#]').css('transform', 'rotateY(0deg)');">
+                        <div class="car-battery">
+                            <div class="car-tile-header"><#LANG_LEAFSPY_CAR_BATTERY#></div>
+                            <div class="car-tile-block tile-text">
+                                <div><#LANG_LEAFSPY_TEMPERATURE#></div>
+                                <div>[#BATTEMP#]&#176;[#TUNITS#]</div>
+                            </div>
+                            <div class="car-tile-block tile-text">
+                                <div><#LANG_LEAFSPY_VOLTAGE#></div>
+                                <div>[#BATVOLTS#] <#LANG_LEAFSPY_VOLT#></div>
+                            </div>
+                            <div class="car-tile-block tile-text">
+                                <div><#LANG_LEAFSPY_BATTERY_CURRENT#></div>
+                                <div>[#BATAMPS#] <#LANG_LEAFSPY_AMPER#></div>
+                            </div>
+                            <div class="car-tile-block tile-text">
+                                <div><#LANG_LEAFSPY_BATTERY_CAPACITY#></div>
+                                <div>[#AHR#] <#LANG_LEAFSPY_AMPERHOUR#></div>
+                            </div>
+                            <div class="car-tile-block tile-text">
+                                <div><#LANG_LEAFSPY_BATTERY_HEALTH#></div>
+                                <div>[#SOH#]%</div>
+                            </div>
+                            <div class="car-tile-block tile-text-green"><#LANG_LEAFSPY_BACK#></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="car-tiles">
+                <div class="car-info">
+                    <div class="car-tile-header">
+                        [#if CHRGMODE=="0"#]<#LANG_LEAFSPY_ENGINE#>[#else#][#if CHRGMODE=="1"#]<#LANG_LEAFSPY_FAST_CHARGING#>[#else#]<#LANG_LEAFSPY_SLOW_CHARGING#>[#endif#][#endif#]
+                    </div>
+                    <div class="car-tile-block2 tile-big-text">
+                        <div>[#if CHRGMODE=="0"#]
+                                [#SPEED#]<div class="grey-text" style="display: inline-block;">&nbsp;<#LANG_LEAFSPY_KILOMETERPERHOUR#></div>
+                             [#else#]
+                                [#CHRGPWR#]<div class="grey-text" style="display: inline-block;">&nbsp;<#LANG_LEAFSPY_KILOWATT#></div>
+                             [#endif#]
+                        </div>
+                        <div>[#if CHRGMODE=="0"#]
+                                [#ENGINE_CONSUMPTION#]<div class="grey-text" style="display: inline-block;">&nbsp;<#LANG_LEAFSPY_KILOWATT#></div>
+                            [#else#]
+                                <div class="header-text">~[#EST_CHARGING_TIME#] <#LANG_LEAFSPY_LEFT#></div>
+                            [#endif#]
+                        </div>
+                    </div>
+                </div>
+                <div class="car-info">
+                    <div class="car-tile-header"><#LANG_LEAFSPY_TRIP_DIST#></div>
+                    <div class="car-tile-block tile-text">
+                        <div><#LANG_LEAFSPY_TRIP_THIS#></div>
+                        <div>[#DIST#] <#LANG_LEAFSPY_KILOMETER#></div>
+                    </div>
+                    <div class="car-tile-block tile-text">
+                        <div><#LANG_LEAFSPY_TRIP_TOTAL#></div>
+                        <div>[#ODO#] <#LANG_LEAFSPY_KILOMETER#></div>
+                    </div>
+                </div>
+            </div>
+            <a class="car-button car-button-blue" href="?data_source=cars&view_mode=configure&id=[#ID#]">
+                <div style="display: inline-block;"><#LANG_LEAFSPY_CONFIGURE#></div>
+            </a>
+            <div class="car-button car-button-red" onClick="return confirm('<#LANG_ARE_YOU_SURE#>')" href="?data_source=cars&view_mode=delete&id=[#ID#]">
+                <#LANG_DELETE#>
+            </div>
+        </div>
+        [#end RESULT#]
+    [#else RESULT#]
+
+    [#endif RESULT#]
+</div>
+
+<!--
+<div class="thumbnail">
+                    <img src="/img/leafspy/azeo.jpg" class="card-img-top">
+                    <div class="caption">
+                        <h4>Nissan Leaf - [#VIN#]</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-3"><i class="fa fa-tachometer" aria-hidden="true"></i></div>
+                                    <div class="col-md-3">[#ODO#] <#LANG_LEAFSPY_KILOMETER#></div>
+                                    <div class="col-md-3">[#SPEED#] <#LANG_LEAFSPY_KILOMETERPERHOUR#></div>
+                                    <div class="col-md-3">[#RPM#] <#LANG_LEAFSPY_RPM#></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-3"><i class="fa fa-battery-full" aria-hidden="true"></i></div>
+                                    <div class="col-md-3 soc" style="background-size: [#SOC#]%;">[#SOC#]%</div>
+                                    <div class="col-md-3">[#AHR#] <#LANG_LEAFSPY_AMPERHOUR#></div>
+                                    <div class="col-md-3">[#BATTEMP#]&#176;[#TUNITS#]</div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-3"><i class="fa fa-battery-full" aria-hidden="true"></i></div>
+                                    <div class="col-md-3">[#BATVOLTS#] <#LANG_LEAFSPY_VOLT#></div>
+                                    <div class="col-md-3">[#BATAMPS#] <#LANG_LEAFSPY_AMPER#></div>
+                                    <div class="col-md-3"><i class="fa fa-ambulance" aria-hidden="true"></i>&nbsp;[#SOH#]</div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-3">[#if CHRGMODE!="0"#]<i class="fa fa-plug" aria-hidden="true"></i>[#else#]<i class="fa fa-road" aria-hidden="true"></i>[#endif#]</div>
+                                    <div class="col-md-3">[#if CHRGMODE!="0"#][#CHRGPWR#][#else#][#ENGINE_CONSUMPTION#][#endif#] <#LANG_LEAFSPY_KILOWATT#></div>
+                                    <div class="col-md-3">[#if CHRGMODE!="0"#]<i class="fa fa-arrow-right" aria-hidden="true"></i>[#else#]<i class="fa fa-arrow-left" aria-hidden="true"></i>[#endif#]</div>
+                                    <div class="col-md-3"><i class="fa fa-car" aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="btn btn-primary" href="?data_source=cars&view_mode=configure&id=[#ID#]"><#LANG_LEAFSPY_CONFIGURE#></a>
+                        <a class="btn btn-primary" href="?data_source=cars&view_mode=map&id=[#ID#]"><#LANG_LEAFSPY_MAP#></a>
+                        <a class="btn btn-danger" onClick="return confirm('<#LANG_ARE_YOU_SURE#>')" href="?data_source=cars&view_mode=delete&id=[#ID#]"><#LANG_DELETE#></a>
+                    </div>
+                </div>
+-->

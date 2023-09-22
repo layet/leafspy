@@ -42,4 +42,3 @@ if (!$car_id) {
 } else {
 	$leafspy->updateCarData($car_id, $rec);
 }
-

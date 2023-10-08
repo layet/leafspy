@@ -36,9 +36,9 @@ $rec['TUNITS'] = $_REQUEST['Tunits'];
 $leafspy = new leafspy();
 
 $car_id = $leafspy->getCarIdByVIN($rec['VIN']);
-
+print_r($car_id);
 if (!$car_id) {
-	$leafspy->insertNewCar($rec);
+   $leafspy->insertNewCar($rec);
 } else {
-	$leafspy->updateCarData($car_id, $rec);
+   $leafspy->updateCarData($car_id, $rec);
 }

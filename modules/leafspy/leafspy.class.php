@@ -135,7 +135,7 @@ function admin(&$out) {
    if ($this->data_source=='cars' || $this->data_source=='') {
       if ($this->view_mode=='') {
          $queryText = "select c.`ID`, c.`DEVBAT`, c.`LAT`, c.`LONG`, c.`ELV`, c.`TRIP`, c.`ODO`, ROUND(c.`SOC`) AS `SOC`, (100-ROUND(c.`SOC`))*1.6 AS `SOC_Y`, 160-((100-ROUND(c.`SOC`))*1.6) AS `SOC_HEIGHT`,
-            BATTEMP`, c.`RPM`, c.`SOH`, ROUND(c.`SPEED`*3.6) AS `SPEED`, c.`BATVOLTS`, ROUND(c.`BATAMPS`, 1) AS `BATAMPS`, c.`CREATEDON`, ROUND(c.`AHR`,1) AS `AHR`,
+            `BATTEMP`, c.`RPM`, c.`SOH`, ROUND(c.`SPEED`*3.6) AS `SPEED`, c.`BATVOLTS`, ROUND(c.`BATAMPS`, 1) AS `BATAMPS`, c.`CREATEDON`, ROUND(c.`AHR`,1) AS `AHR`,
             c.`TUNITS`, c.`VIN`, c.`HX`, c.`CHRGMODE`, ROUND(c.`CHRGPWR`/1000, 1) AS `CHRGPWR`,
             ROUND(c.`BATAMPS`*`BATVOLTS`/1000) AS `ENGINE_CONSUMPTION`, tr.`DIST`, ROUND(c.`SOC`/(tr.`BAT_CONSUMPTION`/tr.`DIST`)) AS `EST_KILOMETERAGE`,
             time_format(sec_to_time(abs((ch.`maxsoc` - c.`SOC`)/ch.`percpermin`)), '%H:%i') as `EST_CHARGING_TIME`
